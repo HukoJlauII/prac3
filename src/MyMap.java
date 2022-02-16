@@ -84,7 +84,7 @@ public class MyMap<K,V> implements Map<K,V> {
 
     @Override
     public Set keySet() {
-        Set<K> set =new HashSet<>();
+        Set<K> set ;
         lock.lock();
         set=map.keySet();
         lock.unlock();
@@ -102,10 +102,10 @@ public class MyMap<K,V> implements Map<K,V> {
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-        Set<Entry<K, V>> set =new HashSet<>();
+        Set<Entry<K, V>> set ;
         lock.lock();
         set=map.entrySet();
         lock.unlock();
-        return null;
+        return set;
     }
 }
